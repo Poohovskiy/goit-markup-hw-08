@@ -5,7 +5,15 @@
 
 .navigation__list {
     display: flex;
-    margin-left: 94px;
+    margin-left: 88px;
+
+    @media screen and (min-width: $desktop) {
+        margin-left: 93px;
+    }
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 
 .navigation__item {

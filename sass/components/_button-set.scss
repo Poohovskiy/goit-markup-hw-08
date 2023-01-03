@@ -1,7 +1,12 @@
 .button-set {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $tablet) {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
 }
 
 .button-set__item {
@@ -10,6 +15,12 @@
         &:last-child {
             margin-right: 0;
         }
+
+    @media screen and (max-width: 767px) {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
 }
 
 .button-set__button {

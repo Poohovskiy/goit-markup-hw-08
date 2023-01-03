@@ -5,25 +5,66 @@
 }
 
 .footer__container {
-    display: flex;
-    align-items: baseline;
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        }
+}
+
+.footer__tablet {
+    margin-bottom: 60px;
+
+    @media screen and (min-width: $tablet) and (max-width: 1199px) {
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+    }
+
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        align-items: baseline;
+        margin-right: auto;
+        margin-bottom: 0;
+    }
 }
 
 .footer__box {
-    margin-right: 70px;
+    @media screen and (max-width: 767px) {
+        margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: 1199px) {
+        text-align: center;
+    }
+    
+    @media screen and (min-width: $desktop) {
+        margin-right: 70px;
+    }
 }
 
-.footer__form {
-    margin-left: auto;
+.footer__social {
+    @media screen and (max-width: 1199px) {
+        
+    }
+    
+    @media screen and (min-width: $desktop) {
+        
+    }
+}
+
+.footer__list {
+    justify-content: center;
 }
 
 .footer__logo-label {
-    display: block;
-    margin-bottom: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 28px;
 }
 
 .footer__item {
-    margin-bottom: 9px;
+    margin-bottom: 12px;
         &:last-child {
             margin-bottom: 0;
         }
@@ -57,22 +98,46 @@
     line-height: 1.14;
     text-transform: uppercase;
     color: $colorWhitePrimary;
+    text-align: center;
+
+    @media screen and (min-width: $desktop) {
+        text-align: left;
+    }
+}
+
+.submit-form {
+    justify-content: center;
+    @media screen and (min-width: $desktop) {
+        align-items: center;
+    }
 }
 
 .submit-form__field {
-    width: 358px;
-    margin-right: 12px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    width: 100%;
+    margin-bottom: 20px;
     padding: 15px 16px;
     color: $colorWhitePrimary;
     background-color: inherit;
     border: 1px solid $colorFooterInput;
     box-shadow: $shadowButton;
     border-radius: 4px;
+    
+    @media screen and (min-width: $desktop) {
+        display: inline-block;
+        width: 358px;
+        margin-right: 12px;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
 }
 
 .submit-form__button {
     @extend %button;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     padding-left: 28px;
     padding-right: 28px;
@@ -83,6 +148,15 @@
         &:focus {
             background-color: $colorAccentSecondary;
         }
+
+    @media screen and (max-width: 1199px) { 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media screen and (min-width: $desktop) {
+        display: inline-flex;
+    }
 }
 
 .submit-form__icon {

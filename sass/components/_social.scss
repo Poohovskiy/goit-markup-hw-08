@@ -1,6 +1,12 @@
 .social {
     display: flex;
-    column-gap: 10px;
+    justify-content: center;
+}
+
+.social__item {
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
 }
 
 .social__link {

@@ -11,28 +11,66 @@
     display: flex;
     margin-left: auto;
     align-items: center;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: 1199px) {
+        display: block;
+    }
 }
 
 .header__item {
-    margin-right: 50px;
+    @media screen and (min-width: $tablet) {
+        margin-right: 0;
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-right: 50px;
+    
         &:last-child {
             margin-right: 0;
         }
+        margin-bottom: 0;
+    }
 }
 
-.header__icon {
-    margin-right: 10px;
+.header__icon-mail {
+    margin-right: 8px;
+    width: 14px;
+    height: 10px;
+
+    @media screen and (min-width: $desktop) {
+        margin-right: 10px;
+        width: 16px;
+        height: 12px;
+    }
+}
+
+.header__icon-phone {
+    margin-right: 8px;
+    width: 10px;
+    height: 14px;
+
+    @media screen and (min-width: $desktop) {
+        margin-right: 10px;
+        width: 10px;
+        height: 16px;
+    }
 }
 
 .header__contact {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding-top: 32px;
-    padding-bottom: 32px;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
+    font-size: 12px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     fill: $colorText;
     transition: color $duration $timingFunction;
@@ -40,5 +78,12 @@
         &:hover, &:focus {
             fill: $colorAccentPrimary;
             color: $colorAccentPrimary;
+        }
+
+        @media screen and (min-width: $desktop) {
+            padding-top: 32px;
+            padding-bottom: 32px;
+            font-size: 14px;
+            line-height: 1.14;
         }
 }
